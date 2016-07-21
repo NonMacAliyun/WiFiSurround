@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dsc-WD-dBb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="59K-ih-oMA"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chg-Ah-WV6">
+                                <rect key="frame" x="224" y="334" width="72" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                                <state key="normal" title="开始记录"/>
+                                <connections>
+                                    <action selector="startRecord" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ej4-wh-wTd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dsc-WD-dBb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="3ck-P3-4J0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Chg-Ah-WV6" secondAttribute="trailing" constant="8" id="Hfd-Gl-apm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Chg-Ah-WV6" secondAttribute="bottom" constant="200" id="IuN-43-yku"/>
+                            <constraint firstItem="dsc-WD-dBb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="L9a-kd-M32"/>
+                            <constraint firstItem="Chg-Ah-WV6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NmF-fl-LEb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dsc-WD-dBb" secondAttribute="bottom" id="RDk-z7-ECS"/>
+                            <constraint firstItem="Chg-Ah-WV6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rvl-HE-3my"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dsc-WD-dBb" secondAttribute="trailing" constant="-16" id="qGt-Vo-FuI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NmF-fl-LEb"/>
+                                <exclude reference="Rvl-HE-3my"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapView" destination="dsc-WD-dBb" id="NVV-p8-aHR"/>
+                        <outlet property="startRecordBtn" destination="Chg-Ah-WV6" id="U5S-kM-g1l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="283"/>
+        </scene>
+    </scenes>
+</document>

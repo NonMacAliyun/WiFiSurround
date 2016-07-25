@@ -11,5 +11,7 @@
 @interface NSNumber (Transform)
 
 + (NSUInteger)UIntegerFromDouble:(double)aDouble;
++ (NSString *)StringFromDouble:(double)aDouble;
++ (double)DoubleFrom6Double:(double)aDouble;
 
 @end

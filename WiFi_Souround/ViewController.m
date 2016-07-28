@@ -101,7 +101,7 @@
     
     
     self.dateFormatter = [[NSDateFormatter alloc] init];
-    self.dateFormatter.dateFormat = @"yyyy-MM-dd hh:mm:ss";
+    self.dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
     
     [self buildView];
     [self setUpLocation];
@@ -186,6 +186,7 @@ int getSignalStrength()
                                                        repeats:YES];
     self.startRecordBtn.enabled = NO;
     self.totalLogString = [[NSMutableString alloc] init];
+    [self.bluetoothsArray removeAllObjects];
 }
 
 - (IBAction)recordListBtnPressed {

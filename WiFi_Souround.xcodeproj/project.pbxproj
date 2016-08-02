@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F8682D781D42123300B6D994 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8682D771D42123300B6D994 /* CoreLocation.framework */; };
 		F86896E41D3F370600C7E6EE /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F86896E31D3F370600C7E6EE /* NetworkManager.m */; };
 		F8BB8C1C1D3F98A2008C0EE2 /* network.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BB8C1B1D3F98A2008C0EE2 /* network.m */; };
 		F8BB8C1F1D4076F7008C0EE2 /* NSNumber+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BB8C1E1D4076F7008C0EE2 /* NSNumber+Transform.m */; };
@@ -21,38 +20,10 @@
 		F8FF11571D3E36E500FC9F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FF11551D3E36E500FC9F58 /* Main.storyboard */; };
 		F8FF11591D3E36E500FC9F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8FF11581D3E36E500FC9F58 /* Assets.xcassets */; };
 		F8FF115C1D3E36E500FC9F58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8FF115A1D3E36E500FC9F58 /* LaunchScreen.storyboard */; };
+		FA950D9E1D50A8FA0075E005 /* NeHostpotNetwork+wifis.m in Sources */ = {isa = PBXBuildFile; fileRef = FA950D9D1D50A8FA0075E005 /* NeHostpotNetwork+wifis.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F8682D771D42123300B6D994 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework"; sourceTree = "<group>"; };
-		F8682D791D42125B00B6D994 /* _CLLocationManagerRoutineProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = _CLLocationManagerRoutineProxy.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/_CLLocationManagerRoutineProxy.h"; sourceTree = "<group>"; };
-		F8682D7A1D42125C00B6D994 /* CLBeacon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLBeacon.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLBeacon.h"; sourceTree = "<group>"; };
-		F8682D7B1D42125C00B6D994 /* CLBeaconRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLBeaconRegion.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLBeaconRegion.h"; sourceTree = "<group>"; };
-		F8682D7C1D42125C00B6D994 /* CLCircularRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLCircularRegion.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLCircularRegion.h"; sourceTree = "<group>"; };
-		F8682D7D1D42125C00B6D994 /* CLFloor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLFloor.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLFloor.h"; sourceTree = "<group>"; };
-		F8682D7E1D42125C00B6D994 /* CLGeocoder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLGeocoder.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLGeocoder.h"; sourceTree = "<group>"; };
-		F8682D7F1D42125C00B6D994 /* CLGeocoderInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLGeocoderInternal.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLGeocoderInternal.h"; sourceTree = "<group>"; };
-		F8682D801D42125C00B6D994 /* CLHeading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLHeading.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLHeading.h"; sourceTree = "<group>"; };
-		F8682D811D42125C00B6D994 /* CLHeadingInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLHeadingInternal.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLHeadingInternal.h"; sourceTree = "<group>"; };
-		F8682D821D42125C00B6D994 /* CLInUseAssertion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLInUseAssertion.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLInUseAssertion.h"; sourceTree = "<group>"; };
-		F8682D831D42125C00B6D994 /* CLInUseAssertionInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLInUseAssertionInternal.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLInUseAssertionInternal.h"; sourceTree = "<group>"; };
-		F8682D841D42125C00B6D994 /* CLLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLLocation.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLLocation.h"; sourceTree = "<group>"; };
-		F8682D851D42125C00B6D994 /* CLLocationInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLLocationInternal.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLLocationInternal.h"; sourceTree = "<group>"; };
-		F8682D861D42125C00B6D994 /* CLLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLLocationManager.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLLocationManager.h"; sourceTree = "<group>"; };
-		F8682D871D42125C00B6D994 /* CLLocationManagerInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLLocationManagerInternal.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLLocationManagerInternal.h"; sourceTree = "<group>"; };
-		F8682D881D42125C00B6D994 /* CLLocationManagerRoutine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLLocationManagerRoutine.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLLocationManagerRoutine.h"; sourceTree = "<group>"; };
-		F8682D891D42125C00B6D994 /* CLLocationMatchInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLLocationMatchInfo.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLLocationMatchInfo.h"; sourceTree = "<group>"; };
-		F8682D8A1D42125C00B6D994 /* CLLocationMatchInfoInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLLocationMatchInfoInternal.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLLocationMatchInfoInternal.h"; sourceTree = "<group>"; };
-		F8682D8B1D42125C00B6D994 /* CLPlacemark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLPlacemark.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLPlacemark.h"; sourceTree = "<group>"; };
-		F8682D8C1D42125C00B6D994 /* CLPlacemarkInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLPlacemarkInternal.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLPlacemarkInternal.h"; sourceTree = "<group>"; };
-		F8682D8D1D42125C00B6D994 /* CLRegion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLRegion.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLRegion.h"; sourceTree = "<group>"; };
-		F8682D8E1D42125C00B6D994 /* CLSimulationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLSimulationManager.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLSimulationManager.h"; sourceTree = "<group>"; };
-		F8682D8F1D42125C00B6D994 /* CLTilesManagerClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLTilesManagerClient.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLTilesManagerClient.h"; sourceTree = "<group>"; };
-		F8682D901D42125C00B6D994 /* CLVehicleHeading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLVehicleHeading.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLVehicleHeading.h"; sourceTree = "<group>"; };
-		F8682D911D42125C00B6D994 /* CLVehicleHeadingInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLVehicleHeadingInternal.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLVehicleHeadingInternal.h"; sourceTree = "<group>"; };
-		F8682D921D42125C00B6D994 /* CLVehicleSpeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLVehicleSpeed.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLVehicleSpeed.h"; sourceTree = "<group>"; };
-		F8682D931D42125C00B6D994 /* CLVehicleSpeedInternal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLVehicleSpeedInternal.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLVehicleSpeedInternal.h"; sourceTree = "<group>"; };
-		F8682D941D42125C00B6D994 /* CLVisit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CLVisit.h; path = "../../../../Downloads/iOS-Runtime-Headers/Frameworks/CoreLocation.framework/CLVisit.h"; sourceTree = "<group>"; };
 		F86896E21D3F370600C7E6EE /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		F86896E31D3F370600C7E6EE /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		F8BB8C1A1D3F98A2008C0EE2 /* network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = network.h; sourceTree = "<group>"; };
@@ -75,6 +46,8 @@
 		F8FF11581D3E36E500FC9F58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8FF115B1D3E36E500FC9F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8FF115D1D3E36E500FC9F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA950D9C1D50A8FA0075E005 /* NeHostpotNetwork+wifis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NeHostpotNetwork+wifis.h"; path = "WiFi_Souround/NeHostpotNetwork+wifis.h"; sourceTree = "<group>"; };
+		FA950D9D1D50A8FA0075E005 /* NeHostpotNetwork+wifis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NeHostpotNetwork+wifis.m"; path = "WiFi_Souround/NeHostpotNetwork+wifis.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8682D781D42123300B6D994 /* CoreLocation.framework in Frameworks */,
 				F8BB8C211D40CDC6008C0EE2 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,35 +65,8 @@
 		F8FF11401D3E36E400FC9F58 = {
 			isa = PBXGroup;
 			children = (
-				F8682D791D42125B00B6D994 /* _CLLocationManagerRoutineProxy.h */,
-				F8682D7A1D42125C00B6D994 /* CLBeacon.h */,
-				F8682D7B1D42125C00B6D994 /* CLBeaconRegion.h */,
-				F8682D7C1D42125C00B6D994 /* CLCircularRegion.h */,
-				F8682D7D1D42125C00B6D994 /* CLFloor.h */,
-				F8682D7E1D42125C00B6D994 /* CLGeocoder.h */,
-				F8682D7F1D42125C00B6D994 /* CLGeocoderInternal.h */,
-				F8682D801D42125C00B6D994 /* CLHeading.h */,
-				F8682D811D42125C00B6D994 /* CLHeadingInternal.h */,
-				F8682D821D42125C00B6D994 /* CLInUseAssertion.h */,
-				F8682D831D42125C00B6D994 /* CLInUseAssertionInternal.h */,
-				F8682D841D42125C00B6D994 /* CLLocation.h */,
-				F8682D851D42125C00B6D994 /* CLLocationInternal.h */,
-				F8682D861D42125C00B6D994 /* CLLocationManager.h */,
-				F8682D871D42125C00B6D994 /* CLLocationManagerInternal.h */,
-				F8682D881D42125C00B6D994 /* CLLocationManagerRoutine.h */,
-				F8682D891D42125C00B6D994 /* CLLocationMatchInfo.h */,
-				F8682D8A1D42125C00B6D994 /* CLLocationMatchInfoInternal.h */,
-				F8682D8B1D42125C00B6D994 /* CLPlacemark.h */,
-				F8682D8C1D42125C00B6D994 /* CLPlacemarkInternal.h */,
-				F8682D8D1D42125C00B6D994 /* CLRegion.h */,
-				F8682D8E1D42125C00B6D994 /* CLSimulationManager.h */,
-				F8682D8F1D42125C00B6D994 /* CLTilesManagerClient.h */,
-				F8682D901D42125C00B6D994 /* CLVehicleHeading.h */,
-				F8682D911D42125C00B6D994 /* CLVehicleHeadingInternal.h */,
-				F8682D921D42125C00B6D994 /* CLVehicleSpeed.h */,
-				F8682D931D42125C00B6D994 /* CLVehicleSpeedInternal.h */,
-				F8682D941D42125C00B6D994 /* CLVisit.h */,
-				F8682D771D42123300B6D994 /* CoreLocation.framework */,
+				FA950D9C1D50A8FA0075E005 /* NeHostpotNetwork+wifis.h */,
+				FA950D9D1D50A8FA0075E005 /* NeHostpotNetwork+wifis.m */,
 				F8BB8C201D40CDC6008C0EE2 /* MapKit.framework */,
 				F8FF114B1D3E36E400FC9F58 /* WiFi_Souround */,
 				F8FF114A1D3E36E400FC9F58 /* Products */,
@@ -202,7 +147,7 @@
 				TargetAttributes = {
 					F8FF11481D3E36E400FC9F58 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = VR2444KXAF;
+						DevelopmentTeam = 9PS2W69DTY;
 					};
 				};
 			};
@@ -245,6 +190,7 @@
 			files = (
 				F86896E41D3F370600C7E6EE /* NetworkManager.m in Sources */,
 				F8BB8C271D40D72F008C0EE2 /* ListDetailVC.m in Sources */,
+				FA950D9E1D50A8FA0075E005 /* NeHostpotNetwork+wifis.m in Sources */,
 				F8FF11541D3E36E500FC9F58 /* ViewController.m in Sources */,
 				F8FF11511D3E36E500FC9F58 /* AppDelegate.m in Sources */,
 				F8FF114E1D3E36E400FC9F58 /* main.m in Sources */,
@@ -360,14 +306,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Talkweb Information System Co., Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WiFi_Souround/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.talkweb.gravity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NonMac.wifisourond;
 				PRODUCT_NAME = "定位测试";
-				PROVISIONING_PROFILE = "f872722a-a038-452f-8e7d-0b36236e8bd8";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -376,14 +323,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Talkweb Information System Co., Ltd";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WiFi_Souround/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LINKER_DISPLAYS_MANGLED_NAMES = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.talkweb.gravity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.NonMac.wifisourond;
 				PRODUCT_NAME = "定位测试";
-				PROVISIONING_PROFILE = "f872722a-a038-452f-8e7d-0b36236e8bd8";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

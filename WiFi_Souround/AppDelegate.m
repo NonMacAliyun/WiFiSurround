@@ -20,6 +20,10 @@
     [[UINavigationBar appearance] setTranslucent:YES];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"nonImg"] forBarMetrics:UIBarMetricsDefault];
     
+//    NSString *totalLogString = @"totalLogStringtotalLogStringtotalLogString totalLogStringtotalLogStringtotalLogStringtotalLogStringtotalLogStringtotalLogStringtotalLogStringtotalLogStringtotalLogString";
+//    NSString *path = [NSHomeDirectory() stringByAppendingString:[NSString stringWithFormat:@"/Documents/test2.txt"]];
+//    [[totalLogString dataUsingEncoding:NSUTF8StringEncoding] writeToFile:path atomically:YES];
+    
     return YES;
 }
 

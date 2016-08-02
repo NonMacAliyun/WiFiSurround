@@ -6,6 +6,7 @@
 //  Copyright © 2016年 NonMac. All rights reserved.
 //
 
+#import <NetworkExtension/NetworkExtension.h>
 #import "ViewController.h"
 
 //定位
@@ -82,11 +83,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[[UIAlertView alloc] initWithTitle:@"提醒"
-                                message:@"请确保开启了蓝牙、wifi、定位功能"
-                               delegate:nil
-                      cancelButtonTitle:@"ok"
-                      otherButtonTitles:nil] show];
+//    [[[UIAlertView alloc] initWithTitle:@"提醒"
+//                                message:@"请确保开启了蓝牙、wifi、定位功能"
+//                               delegate:nil
+//                      cancelButtonTitle:@"ok"
+//                      otherButtonTitles:nil] show];
     if (![[NSUserDefaults standardUserDefaults] objectForKey:WRITETOFILETIMES]) {
         [[NSUserDefaults standardUserDefaults] setObject:@0 forKey:WRITETOFILETIMES];
         writeToFileTime = 0;
@@ -109,6 +110,17 @@
     [self setUpWifi];
     [self setUpBluetooth];
     [self setUpMagnetic];
+    
+    [self showWiFiSignalStrength];
+    [self testMethod];
+}
+
+- (void)showWiFiSignalStrength {
+    [[[UIAlertView alloc] initWithTitle:@"wifi信号强度"
+                                message:[NSString stringWithFormat:@"%@", getSignalStrength()]
+                               delegate:nil
+                      cancelButtonTitle:@"ok"
+                      otherButtonTitles:nil] show];
 }
 
 - (void)updateTimeLabel {
@@ -134,15 +146,58 @@
     return;
 }
 
-int getSignalStrength()
+NSString* getSignalStrength()
 {
+//    void *libHandle = dlopen("/System/Library/Frameworks/CoreTelephony.framework/CoreTelephony", RTLD_LAZY);
+//    double (*CTGetSignalStrength)();
+//    CTGetSignalStrength = dlsym(libHandle, "CTGetSignalStrength");
+//    if( CTGetSignalStrength == NULL) NSLog(@"Could not find CTGetSignalStrength");
+//    double result = CTGetSignalStrength();
+//    dlclose(libHandle);
+//    return result;
+    
+    char *methodName = "GetDidJustJoin";
     void *libHandle = dlopen("/System/Library/Frameworks/CoreTelephony.framework/CoreTelephony", RTLD_LAZY);
-    int (*CTGetSignalStrength)();
-    CTGetSignalStrength = dlsym(libHandle, "CTGetSignalStrength");
-    if( CTGetSignalStrength == NULL) NSLog(@"Could not find CTGetSignalStrength");
-    int result = CTGetSignalStrength();
+    int (*CTGetSSID)();
+    CTGetSSID = dlsym(libHandle, methodName);
+    if( CTGetSSID == NULL) {
+        NSLog(@"Could not find %s", methodName);
+        return @"";
+    }
+    int result2 = CTGetSSID();
     dlclose(libHandle);
-    return result;
+    return [NSString stringWithFormat:@"%d", result2];
+}
+
+- (void)testMethod {
+//    NSString *f = kNEHotspotHelperOptionDisplayName;
+    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:@"WI-FI TAG", @"kNEHotspotHelperOptionDisplayName", nil];
+    dispatch_queue_t queue = dispatch_queue_create("com.myapp.ex", 0);
+    
+    BOOL returnType = [NEHotspotHelper registerWithOptions:options queue:queue handler: ^(NEHotspotHelperCommand * cmd) {
+        
+        if(cmd.commandType == kNEHotspotHelperCommandTypeEvaluate ||
+           cmd.commandType == kNEHotspotHelperCommandTypeFilterScanList)
+        {
+            for (NEHotspotNetwork* network  in cmd.networkList)
+            {
+                NSLog(@"%@", network.SSID);
+                if ([network.SSID isEqualToString:@"WX_moses"])
+                {
+                    [network setConfidence:kNEHotspotHelperConfidenceHigh];
+                    [network setPassword:@"mypassword"];
+                    NSLog(@"Confidence set to high for ssid: %@ (%@)\n\n", network.SSID, network.BSSID);
+                    //                    NSMutableArray *hotspotList = [NSMutableArray new];
+                    //                    [hotspotList addObject:network];
+                    
+                    // This is required
+                    NEHotspotHelperResponse *response = [cmd createResponse:kNEHotspotHelperResultSuccess];
+                    [response setNetwork:network];
+                    [response deliver];
+                }
+            }
+        }
+    }];
 }
 
 - (void)setUpWifi {

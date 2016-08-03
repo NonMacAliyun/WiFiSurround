@@ -170,6 +170,29 @@ NSString* getSignalStrength()
 }
 
 - (void)testMethod {
+    NSBundle *a = [NSBundle bundleWithPath:@"System/Library/PrivateFrameworks/AppleAccount.framework"];
+    NSBundle *b = [NSBundle bundleWithPath:@"System/Library/PrivateFrameworks/ApplePushService.framework"];
+    NSBundle *c = [NSBundle bundleWithPath:@"System/Library/PrivateFrameworks/CoreTelephony.framework"];
+    if ([a load]) {
+        if ([b load]) {
+            [c load];
+            NSLog(@"%s>>>>>>%d",__func__,__LINE__);
+            Class aa = NSClassFromString(@"AADeviceInfo");
+            Class bb = NSClassFromString(@"NEHotspotHelper");
+            id BB = [[bb alloc] init];
+            NSLog(@"%s>>>>>>%d>>>>>>%@",__func__,__LINE__, (NSString *)[aa performSelector:@selector(udid)]);
+            NSLog(@"%s>>>>>>%d>>>>>>%@",__func__,__LINE__, [aa performSelector:@selector(productVersion)]);
+            NSLog(@"%s>>>>>>%d>>>>>>%@",__func__,__LINE__, [aa performSelector:@selector(userAgentHeader)]);
+            NSLog(@"%s>>>>>>%d>>>>>>%@",__func__,__LINE__, [aa performSelector:@selector(osVersion)]);
+            NSLog(@"%s>>>>>>%d>>>>>>%@",__func__,__LINE__, [aa performSelector:@selector(appleIDClientIdentifier)]);
+            NSLog(@"%s>>>>>>%d>>>>>>%@",__func__,__LINE__, [aa performSelector:@selector(clientInfoHeader)]);
+            NSLog(@"%s>>>>>>%d>>>>>>%@",__func__,__LINE__, [aa performSelector:@selector(serialNumber)]);
+            NSLog(@"%s>>>>>>%d>>>>>>%@",__func__,__LINE__, [aa performSelector:@selector(infoDictionary)]);
+            NSLog(@"%s>>>>>>%d>>>>>>%@",__func__,__LINE__, [BB performSelector:@selector(SSID)]);
+        }
+    }
+    return;
+    
 //    NSString *f = kNEHotspotHelperOptionDisplayName;
     NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:@"WI-FI TAG", @"kNEHotspotHelperOptionDisplayName", nil];
     dispatch_queue_t queue = dispatch_queue_create("com.myapp.ex", 0);

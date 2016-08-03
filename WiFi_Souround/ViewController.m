@@ -8,6 +8,8 @@
 
 #import <NetworkExtension/NetworkExtension.h>
 #import "ViewController.h"
+#import <CoreTelephony/CTCarrier.h>
+#import <CoreTelephony/CTTelephonyNetworkInfo.h>
 
 //定位
 #import <CoreLocation/CoreLocation.h>
@@ -148,25 +150,32 @@
 
 NSString* getSignalStrength()
 {
-//    void *libHandle = dlopen("/System/Library/Frameworks/CoreTelephony.framework/CoreTelephony", RTLD_LAZY);
-//    double (*CTGetSignalStrength)();
-//    CTGetSignalStrength = dlsym(libHandle, "CTGetSignalStrength");
-//    if( CTGetSignalStrength == NULL) NSLog(@"Could not find CTGetSignalStrength");
-//    double result = CTGetSignalStrength();
-//    dlclose(libHandle);
-//    return result;
-    
-    char *methodName = "GetDidJustJoin";
+    CTTelephonyNetworkInfo *info = [[CTTelephonyNetworkInfo alloc] init];
+
+    CTCarrier *carrier = [info subscriberCellularProvider];
+    NSString *mCarrier = [NSString stringWithFormat:@"%@",[carrier carrierName]];
+    mCarrier = [NSString stringWithFormat:@"%@", [info performSelector:@selector(cellId)]];
+    return mCarrier;
+
     void *libHandle = dlopen("/System/Library/Frameworks/CoreTelephony.framework/CoreTelephony", RTLD_LAZY);
-    int (*CTGetSSID)();
-    CTGetSSID = dlsym(libHandle, methodName);
-    if( CTGetSSID == NULL) {
-        NSLog(@"Could not find %s", methodName);
-        return @"";
-    }
-    int result2 = CTGetSSID();
+    int (*CTGetSignalStrength)();
+    CTGetSignalStrength = dlsym(libHandle, "CTGetSignalStrength");
+    if( CTGetSignalStrength == NULL) NSLog(@"Could not find CTGetSignalStrength");
+    int result = CTGetSignalStrength();
     dlclose(libHandle);
-    return [NSString stringWithFormat:@"%d", result2];
+    return [NSString stringWithFormat:@"%d", result];
+    
+//    char *methodName = "GetDidJustJoin";
+//    void *libHandle = dlopen("/System/Library/Frameworks/CoreTelephony.framework/CoreTelephony", RTLD_LAZY);
+//    int (*CTGetSSID)();
+//    CTGetSSID = dlsym(libHandle, methodName);
+//    if( CTGetSSID == NULL) {
+//        NSLog(@"Could not find %s", methodName);
+//        return @"";
+//    }
+//    int result2 = CTGetSSID();
+//    dlclose(libHandle);
+//    return [NSString stringWithFormat:@"%d", result2];
 }
 
 - (void)testMethod {
